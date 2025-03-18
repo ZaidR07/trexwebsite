@@ -18,7 +18,7 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({ items }) => {
   return (
     <div className="w-[100vw] flex justify-center md:hidden">
-      <div className=" absolute bottom-full  flex  gap-2 dark:bg-neutral-700  p-3 rounded-2xl">
+      <div className=" fixed bottom-[4vh]  flex  gap-2 dark:bg-[#162038]  p-3 rounded-2xl">
         {items.map((item) => (
           <motion.div
             key={item.title}
@@ -28,7 +28,7 @@ const FloatingDockMobile = ({ items }) => {
           >
             <Link
               href={item.href}
-              className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+              className="h-10 w-10 rounded-full bg-gray-50 dark:bg-[#23304d] flex items-center justify-center"
             >
               <div className="h-4 w-4">{item.icon}</div>
             </Link>
@@ -50,7 +50,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
+        "self-center hidden fixed bottom-[4vh] md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-[#162038] px-4 pb-3",
         className
       )}>
       {items.map((item) => (
